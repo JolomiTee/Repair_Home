@@ -85,7 +85,7 @@ class ShowScreen extends StatelessWidget {
             height: _size.height * 0.425,
             width: double.infinity,
             decoration: BoxDecoration(
-              borderRadius:const BorderRadius.only(bottomLeft:Radius.circular(5.0),bottomRight:Radius.circular(5.0)),
+              borderRadius:const BorderRadius.only(bottomLeft:Radius.circular(20.0),bottomRight:Radius.circular(20.0)),
               color: lightRed.withOpacity(0.4),
               image: const DecorationImage(
                   image: AssetImage("assets/images/peach.png"),
