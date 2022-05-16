@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:repair_home_capstone2/models/money.dart';
+import 'screens.dart';
 
 class Cart extends StatelessWidget {
   const Cart({Key? key}) : super(key: key);
@@ -19,8 +20,13 @@ class Cart extends StatelessWidget {
           children: [
             Positioned(
               right: 0,
-              child:Opacity(opacity: 0.1,child: Image.asset("assets/images/owk.png",scale: 0.75,)), 
-              ),
+              child: Opacity(
+                  opacity: 0.1,
+                  child: Image.asset(
+                    "assets/images/owk.png",
+                    scale: 0.75,
+                  )),
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: Column(
@@ -37,14 +43,20 @@ class Cart extends StatelessWidget {
                             child: Row(
                               children: [
                                 GestureDetector(
-                                  onTap: (){},
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (_) => SignUpScreen()));
+                                  },
                                   child: const Icon(
                                     Icons.navigate_before,
                                     size: 48,
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.only(left: size.size.width * 0.25),
+                                  padding: EdgeInsets.only(
+                                      left: size.size.width * 0.25),
                                   child: Text(
                                     "Cart",
                                     style: TextStyle(
@@ -67,10 +79,11 @@ class Cart extends StatelessWidget {
                                 sub: "Kitchen",
                                 widget: Column(
                                   children: List.generate(
-                                      breakdown.length, (index) => ListNew(
-                                        title: breakdown[index].title,
-                                        price: breakdown[index].price,
-                                      )),
+                                      breakdown.length,
+                                      (index) => ListNew(
+                                            title: breakdown[index].title,
+                                            price: breakdown[index].price,
+                                          )),
                                 ),
                               ),
                               const NewList(
@@ -96,31 +109,42 @@ class Cart extends StatelessWidget {
                         ),
                       ],
                     ),
-                  ), Padding(
-                    padding: const EdgeInsets.only(bottom:30.0),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 30.0),
                     child: Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal:25.0,vertical: 1),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 25.0, vertical: 1),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: const [
-                              Text("Total Price",style: TextStyle(color: Colors.grey),),
-                              Text("\$302",style: TextStyle(fontFamily: "Gotham",fontWeight:FontWeight.w700))
+                              Text(
+                                "Total Price",
+                                style: TextStyle(color: Colors.grey),
+                              ),
+                              Text("\$302",
+                                  style: TextStyle(
+                                      fontFamily: "Gotham",
+                                      fontWeight: FontWeight.w700))
                             ],
                           ),
                         ),
                         GestureDetector(
-                          onTap: (){},
+                          onTap: () {},
                           child: Container(
                             alignment: Alignment.center,
-                                height: size.size.height * 0.07,
-                                width: double.maxFinite,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(12),
-                                color: Colors.black,
-                                ),
-                                child: const Text("Make an Order",style: TextStyle(color: Colors.white,fontFamily: "Gotham"),
+                            height: size.size.height * 0.07,
+                            width: double.maxFinite,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12),
+                              color: Colors.black,
+                            ),
+                            child: const Text(
+                              "Make an Order",
+                              style: TextStyle(
+                                  color: Colors.white, fontFamily: "Gotham"),
                             ),
                           ),
                         )
@@ -153,9 +177,18 @@ class ListNew extends StatelessWidget {
       child: ListTile(
         contentPadding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
         tileColor: const Color(0xffD6E3FF),
-        leading: const Icon(Icons.do_not_disturb_on_rounded,color: Color(0xf3CA1414),),
-        title: Text(title,style: const TextStyle(fontFamily: "Gotham"),),
-        trailing: Text(price,style: const TextStyle(fontFamily: "Gotham"),),
+        leading: const Icon(
+          Icons.do_not_disturb_on_rounded,
+          color: Color(0xf3CA1414),
+        ),
+        title: Text(
+          title,
+          style: const TextStyle(fontFamily: "Gotham"),
+        ),
+        trailing: Text(
+          price,
+          style: const TextStyle(fontFamily: "Gotham"),
+        ),
       ),
     );
   }
@@ -182,8 +215,10 @@ class NewList extends StatelessWidget {
     return Column(
       children: [
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
-            margin: trailing == null ?const EdgeInsets.only(bottom: 0.0) :const EdgeInsets.only(bottom: 24.0),
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            margin: trailing == null
+                ? const EdgeInsets.only(bottom: 0.0)
+                : const EdgeInsets.only(bottom: 24.0),
             width: double.maxFinite,
             height: 65,
             decoration: BoxDecoration(
@@ -255,10 +290,10 @@ class NewList extends StatelessWidget {
               ],
             )),
         Padding(
-          padding: trailing == null ? const EdgeInsets.only(bottom:10.0) :const EdgeInsets.all(0.0),
-          child: Offstage(
-            offstage: false,
-            child: widget),
+          padding: trailing == null
+              ? const EdgeInsets.only(bottom: 10.0)
+              : const EdgeInsets.all(0.0),
+          child: Offstage(offstage: false, child: widget),
         ),
       ],
     );

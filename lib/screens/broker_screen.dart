@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:repair_home_capstone2/models/offers.dart';
+import 'screens.dart';
 
 class Broker extends StatefulWidget {
   const Broker({Key? key}) : super(key: key);
@@ -330,6 +331,16 @@ class ListCustom extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.only(bottom: 24.0),
       child: ListTile(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) {
+                return ShowScreen();
+              },
+            ),
+          );
+        },
         contentPadding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
@@ -346,8 +357,7 @@ class ListCustom extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        trailing: 
-        const Icon(
+        trailing: const Icon(
           Icons.navigate_next,
           size: 40,
           color: Color(0xff1B1B1D),

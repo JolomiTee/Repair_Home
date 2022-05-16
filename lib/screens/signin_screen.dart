@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:repair_home_capstone2/components/components.dart';
-
 import 'screens.dart';
 
 class SigninScreen extends StatefulWidget {
@@ -14,8 +13,8 @@ class _SigninScreenState extends State<SigninScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //resizeToAvoidBottomInset: false,
-      backgroundColor: Color(0xffEEEDF3),
+      resizeToAvoidBottomInset: false,
+      // backgroundColor: Color(0xffEEEDF3),
       body: Center(
         child: Stack(
           children: [
@@ -75,7 +74,7 @@ class _SigninScreenState extends State<SigninScreen> {
                     isHidden: true,
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 30,
                   ),
                   InputButton(
                     text: "Sign in",
@@ -83,7 +82,7 @@ class _SigninScreenState extends State<SigninScreen> {
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (_) => HomeScreen(),
+                          builder: (_) => Broker(),
                         ),
                       );
                     },

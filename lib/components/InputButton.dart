@@ -15,9 +15,19 @@ class InputButton extends StatelessWidget {
       children: [
         Expanded(
           child: Container(
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  offset: Offset(2, 4),
+                  blurRadius: 8,
+                  spreadRadius: 0,
+                  color: Color(0xff1F319D),
+                ),
+              ],
+            ),
             height: 60,
             child: Card(
-              elevation: 15,
+              elevation: 0,
               child: ElevatedButton(
                 style: ButtonStyle(
                   elevation: MaterialStateProperty.all(10),

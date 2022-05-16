@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'constants.dart';
+
 class InputField extends StatelessWidget {
   final String hintText;
   final bool isHidden;
@@ -14,25 +16,26 @@ class InputField extends StatelessWidget {
     return Card(
       elevation: 10,
       child: Container(
+        color: lightWhite,
         height: 60,
         child: Center(
           child: TextField(
             obscureText: isHidden,
             decoration: InputDecoration(
               hintText: hintText,
-              fillColor: Colors.white,
+              fillColor: lightWhite,
               filled: true,
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(50),
                 borderSide: BorderSide(
-                  color: Colors.white,
+                  color: lightWhite,
                   width: 2,
                 ),
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(50),
                 borderSide: BorderSide(
-                  color: Colors.white,
+                  color: lightWhite,
                   width: 2,
                 ),
               ),

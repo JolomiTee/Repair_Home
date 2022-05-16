@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.repair_home_capstone2">
    <application
-        android:label="repair_home_capstone2"
-        android:icon="@mipmap/ic_launcher">
+        android:label="Repair Home"
+        android:icon="@mipmap/repair_home_icon">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
